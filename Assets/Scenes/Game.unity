@@ -281,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -370, y: -581}
+  m_AnchoredPosition: {x: -341.22, y: -581}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343698357
@@ -402,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 375, y: -581}
+  m_AnchoredPosition: {x: 341.22, y: -581}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469360565
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ReferenceResolution: {x: 1440, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -910,8 +910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -589}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 0.00000095367, y: -581}
+  m_SizeDelta: {x: 382.44, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271118375
 MonoBehaviour:
@@ -1140,9 +1140,14 @@ MonoBehaviour:
   - {fileID: 2137232457036599337, guid: f2c57d0ff03fc9a4daf3ad75451be778, type: 3}
   - {fileID: 6628981613277673114, guid: 70b40d3f97256164e8a896b7963daf6b, type: 3}
   - {fileID: 2167673483505933109, guid: 76e0fb71cb340d645b56069e6774afce, type: 3}
+  - {fileID: 931598641880334876, guid: 056bf7f8f5c60b04ea176ad66a6c65e7, type: 3}
+  - {fileID: 8339508595444237373, guid: 0cdf1a286bf021d47b8de621378abd4e, type: 3}
+  - {fileID: 7019351478102376443, guid: 7b99090c568e4994898e00a9b908fd34, type: 3}
+  - {fileID: 8121387703786895140, guid: 8e085f487834f454aafc4ea2074fd22e, type: 3}
   FruitSize: 350
   StartingPos: -525
   EndingPos: 525
+  TimeToMoveFruits: 0.5
 --- !u!4 &1859875536
 Transform:
   m_ObjectHideFlags: 0

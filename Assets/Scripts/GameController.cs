@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public int FruitSize;
     public int StartingPos;
     public int EndingPos;
+    public float TimeToMoveFruits;
     private List<RectTransform> _topRowFruits;
     private List<RectTransform> _bottomRowFruits;
 
@@ -57,7 +58,6 @@ public class GameController : MonoBehaviour
     IEnumerator MoveCards()
     {
         PlayButton.enabled = false;
-        float timeToMoveFruits = Random.Range(0.001f, 0.01f);
         int numberOfFruitsToMove = Random.Range(4, 11);
         int moveRightTop = Random.Range(0, 2);
         int moveRightBottom = Random.Range(0, 2);
@@ -93,34 +93,32 @@ public class GameController : MonoBehaviour
             {
                 startPosBottom.Add(_bottomRowFruits[i].anchoredPosition);
             }
-            while (counter < timeToMoveFruits)
+            while (counter < TimeToMoveFruits)
             {
                 counter += Time.deltaTime;
                 for (int i = 0; i < _topRowFruits.Count; i++)
                 {
                     if (moveRightTop == 0)
                     {
-                        _topRowFruits[i].anchoredPosition = Vector3.Lerp(startPosTop[i], startPosTop[i] + new Vector3(FruitSize, 0, 0), counter / timeToMoveFruits);
+                        _topRowFruits[i].anchoredPosition = Vector3.Lerp(startPosTop[i], startPosTop[i] + new Vector3(FruitSize, 0, 0), counter / TimeToMoveFruits);
                     }
                     else if (moveRightTop == 1)
                     {
-                        _topRowFruits[i].anchoredPosition = Vector3.Lerp(startPosTop[i], startPosTop[i] - new Vector3(FruitSize, 0, 0), counter / timeToMoveFruits);
+                        _topRowFruits[i].anchoredPosition = Vector3.Lerp(startPosTop[i], startPosTop[i] - new Vector3(FruitSize, 0, 0), counter / TimeToMoveFruits);
                     }
-
-                    yield return null;
                 }
                 for (int i = 0; i < _bottomRowFruits.Count; i++)
                 {
                     if (moveRightBottom == 0)
                     {
-                        _bottomRowFruits[i].anchoredPosition = Vector3.Lerp(startPosBottom[i], startPosBottom[i] + new Vector3(FruitSize, 0, 0), counter / timeToMoveFruits);
+                        _bottomRowFruits[i].anchoredPosition = Vector3.Lerp(startPosBottom[i], startPosBottom[i] + new Vector3(FruitSize, 0, 0), counter / TimeToMoveFruits);
                     }
                     else if (moveRightBottom == 1)
                     {
-                        _bottomRowFruits[i].anchoredPosition = Vector3.Lerp(startPosBottom[i], startPosBottom[i] - new Vector3(FruitSize, 0, 0), counter / timeToMoveFruits);
+                        _bottomRowFruits[i].anchoredPosition = Vector3.Lerp(startPosBottom[i], startPosBottom[i] - new Vector3(FruitSize, 0, 0), counter / TimeToMoveFruits);
                     }
-                    yield return null;
                 }
+                yield return null;
             }
         }
         for (int i = 0; i < numberOfFruitsToMove; i++)

@@ -13,19 +13,21 @@ public class MenuController : MonoBehaviour
     public Button AgreeToPrivacyButton;
     public GameObject AgreeSwitch;
     public Button WebViewButton;
-    private bool agreedToPrivacy = false;
     
     private void AgreeToPrivacySwitch()
     {
-        if (agreedToPrivacy == false)
+        if (PlayerPrefs.GetInt("HasAgreedToPrivacy") == 0)
         {
-            agreedToPrivacy = true;
+            PlayerPrefs.SetInt("HasAgreedToPrivacy", 1);
             AgreeSwitch.transform.position = new Vector3(AgreeSwitch.transform.position.x + 0.3f, AgreeSwitch.transform.position.y, AgreeSwitch.transform.position.z);
             AgreeToPrivacyButton.GetComponent<Image>().color = Color.green;
+            PrivacyPanel.SetActive(false);
+            PrivacyScreen.SetActive(false);
+            MainWindow.SetActive(true);
         }
         else
         {
-            agreedToPrivacy = false;
+            PlayerPrefs.SetInt("HasAgreedToPrivacy", 0);
             AgreeSwitch.transform.position = new Vector3(AgreeSwitch.transform.position.x - 0.3f, AgreeSwitch.transform.position.y, AgreeSwitch.transform.position.z);
             AgreeToPrivacyButton.GetComponent<Image>().color = Color.grey;
         }
@@ -41,7 +43,7 @@ public class MenuController : MonoBehaviour
     }
     private void Play()
     {
-        if (agreedToPrivacy)
+        if (PlayerPrefs.GetInt("HasAgreedToPrivacy") == 1)
         {
 
             SceneManager.LoadScene("Game");
@@ -57,6 +59,10 @@ public class MenuController : MonoBehaviour
         ShowPrivacyScreen.onClick.AddListener(ShowPrivacyPolicy);
         AgreeToPrivacyButton.onClick.AddListener(AgreeToPrivacySwitch);
         WebViewButton.onClick.AddListener(OpenWebView);
+        if (!PlayerPrefs.HasKey("HasAgreedToPrivacy"))
+        {
+            PlayerPrefs.SetInt("HasAgreedToPrivacy", 0);
+        }
     }
     
     private void Update()
@@ -68,6 +74,10 @@ public class MenuController : MonoBehaviour
                 PrivacyPanel.SetActive(false);
                 PrivacyScreen.SetActive(false);
                 MainWindow.SetActive(true);
+            }
+            else
+            {
+                Application.Quit();
             }
         }
     }
