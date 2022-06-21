@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5194988631037528502}
   - component: {fileID: 1639320502724602111}
   - component: {fileID: 1712086737333550523}
-  - component: {fileID: 5602205839709767106}
   m_Layer: 5
   m_Name: Coconut
   m_TagString: Untagged
@@ -77,16 +76,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5602205839709767106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5424026857223457614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef4b1a60596eb74ab259c7f326d7260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FruitType: coconut

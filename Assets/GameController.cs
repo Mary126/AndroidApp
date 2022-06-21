@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -154,5 +155,12 @@ public class GameController : MonoBehaviour
         _bottomRowFruits = new List<RectTransform>();
         GenerateField();
         PlayButton.onClick.AddListener(Play);
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }
